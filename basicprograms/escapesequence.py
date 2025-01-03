@@ -1,0 +1,1 @@
+print("This is Google\nThis is the richest company in the World")
