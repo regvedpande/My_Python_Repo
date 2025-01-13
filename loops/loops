@@ -1,0 +1,9 @@
+# Example of a for loop
+numbers = [1, 2, 3, 4, 5]
+
+for number in numbers:
+    print(number)
+
+# Example of a for loop with a range
+for i in range(5):
+    print("Iteration", i)
