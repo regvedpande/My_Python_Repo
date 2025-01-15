@@ -1,36 +1,53 @@
-def simple_addition(a, b):
-    return a + b
+#Default Argument
+#In this case, if no values are provided, a=9 and b=1 will be used by default
+#Here both arguments are provided (8,4), so default values are not used
+def Argue(a = 9, b = 1):
+    print("Sum of two numbers", a + b)
+    
+Argue(8, 4)
 
-def greet(name="Guest"):
-    return f"Hello, {name}!"
+#Default Argument
+#Same function as above, but only one argument is provided
+#Here a=8 (provided) and b=1 (uses default value)
+def Argue(a = 9, b = 1):
+    print("Sum of two numbers", a + b)
+    
+Argue(8)
 
-def multiply_numbers(*args):
-    result = 1
-    for num in args:
-        result *= num
-    return result
+#Keyword Argument
+#Arguments are passed using parameter names (keywords)
+#This makes the order of arguments flexible
+#Here we explicitly specify which value goes to which parameter
+def Argue3(a = 9, b = 4):
+    print("Sum of two numbers", a + b)
+    
+Argue3(b = 8, a = 4)
 
-def get_person_details(**kwargs):
-    return kwargs
+#Required Argument
+#Parameters without default values are required arguments
+#Here 'a' and 'b' must be provided, while 'c' is optional with default value 1
+#If 'c' is not provided, it uses default value 1
+def Argue4(a, b, c = 1):
+    print("Sum of two numbers", (a + b + c)/3)
+    
+Argue4(8, 4)  #c will use default value 1
 
-def combine_strings(text1: str, text2: str) -> str:
-    return text1 + " " + text2
 
-def calculate_area(length: float, width: float = 1.0) -> float:
-    return length * width
+#Variable-length Argument
+#This function can take any number of arguments
+#The '*' symbol is used to pass a variable number of arguments
+#The arguments are stored in a tuple
+def Argue5(*args):
+    print("Sum of two numbers", sum(args))
+    
+Argue5(8, 4, 5, 6, 7, 8, 9, 10)
 
-def process_list(items: list):
-    return [item.upper() if isinstance(item, str) else item for item in items]
 
-def recursive_factorial(n: int) -> int:
-    if n <= 1:
-        return 1
-    return n * recursive_factorial(n - 1)
-
-def outer_function(x):
-    def inner_function(y):
-        return x + y
-    return inner_function
-
-# Example lambda function
-square = lambda x: x ** 2
+#Variable-length Keyword Argument
+#This function can take any number of keyword arguments 
+#The '**' symbol is used to pass a variable number of keyword arguments
+#The arguments are stored in a dictionary
+def Argue6(**kwargs):
+    print("Sum of two numbers", sum(kwargs.values()))
+    
+Argue6(a = 8, b = 4, c = 5, d = 6, e = 7, f = 8, g = 9, h = 10)
