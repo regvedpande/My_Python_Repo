@@ -53,5 +53,8 @@ print("\n# Additional Methods")
 print("add():", test_set.add("Date"))          # Adds an element
 print("remove():", test_set.remove("Apple"))   # Removes an element (raises error if not found)
 print("discard():", test_set.discard("Fig"))   # Removes an element (no error if not found)
-print("pop():", test_set.pop())                # Removes and returns an arbitrary element
+print("pop():", test_set.pop())                # Removes and returns an random element
 print("clear():", test_set.clear())            # Removes all elements
+clear test_set                              # Deletes the set
+del test_set                                   # Deletes the set
+ 
