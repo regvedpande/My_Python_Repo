@@ -3,3 +3,4 @@ a = m(16) * pi
 print(a)
 print(dir(m))
 print(type(math.nan))
+print(math.nan)

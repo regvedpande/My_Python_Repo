@@ -1,0 +1,3 @@
+import regved
+
+welcome.regved()
