@@ -19,3 +19,5 @@ for key in her:
     
 for key, value in her.items():
     print(value)
+    
+    
