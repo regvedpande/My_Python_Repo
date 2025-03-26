@@ -1,0 +1,41 @@
+def process_file(filepath, output_filepath):
+    """
+    Reads a file, processes each line, and writes the processed output to another file.
+
+    Args:
+        filepath: The path to the input file.
+        output_filepath: The path to the output file.
+    """
+    try:
+        with open(filepath, 'r') as infile, open(output_filepath, 'w') as outfile:
+            for line in infile:
+                # Example processing: convert to uppercase and add a line number
+                processed_line = line.strip().upper()  # Remove whitespace and uppercase
+                line_number = infile.readlines().index(line) + 1 #get line number
+                outfile.write(f"{line_number}: {processed_line}\n") #write line number and the processed line
+
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# Example usage:
+input_file = "input.txt" #create input.txt
+output_file = "output.txt"
+
+# Create a sample input file (if it doesn't exist)
+with open(input_file, 'w') as f:
+    f.write("This is line 1\n")
+    f.write("This is line 2\n")
+    f.write("This is line 3")
+
+process_file(input_file, output_file)
+
+# Read and print the contents of the output file
+try:
+  with open(output_file, 'r') as f:
+    print("\nContents of output file:")
+    print(f.read())
+except FileNotFoundError:
+    print("Output file not found.")
+
