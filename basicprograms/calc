@@ -1,0 +1,39 @@
+def calculate_average(numbers):
+  """Calculates the average of a list of numbers.
+
+  Args:
+    numbers: A list of numbers.
+
+  Returns:
+    The average of the numbers, or None if the list is empty.
+  """
+  if not numbers:
+    return None
+
+  total = sum(numbers)
+  return total / len(numbers)
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5]
+average = calculate_average(numbers)
+
+if average is not None:
+  print(f"The average of the numbers is: {average}")
+else:
+  print("The list is empty.")
+
+numbers2 = []
+average2 = calculate_average(numbers2)
+
+if average2 is not None:
+    print(f"The average of the numbers is: {average2}")
+else:
+    print("The second list is empty.")
+
+numbers3 = [10.5, 20.2, 30.7]
+average3 = calculate_average(numbers3)
+
+if average3 is not None:
+    print(f"The average of the numbers is: {average3}")
+else:
+    print("The third list is empty.")
